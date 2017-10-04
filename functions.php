@@ -20,7 +20,21 @@ function wooc_extra_register_fields() {?>
  }
  add_action( 'woocommerce_register_form_start', 'wooc_extra_register_fields' );
 
-
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/icon/logo_header.png");
+			width: 320px;
+		    background-size: 320px 182px;
+		    margin-bottom: 0px;
+		    min-height: 185px;
+        }
+        #loginform{
+        	margin-top: 0px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
 function wooc_save_extra_register_fields( $customer_id ) {
    
       if ( isset( $_POST['billing_first_name'] ) ) {
