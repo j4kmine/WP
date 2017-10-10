@@ -142,13 +142,14 @@
         
          var slides = $(".slides").height();
          $(".side-menus").height(slides);
-      
+         $(".side-menus-right img").height(slides); 
         var width = $(window).width();
         if (width < 767) {
           vartoshow = 1;
           toscroll = 1;
           dots=false;
           $(".side-menus").height(0);
+           $(".side-menus-right img").css('height','auto'); 
         }else{
           toscroll=4;
           vartoshow=4;

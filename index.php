@@ -121,7 +121,7 @@
                    <img src="<?php echo get_theme_mod('banner_slider_bottom')?get_theme_mod('banner_slider_bottom'):get_bloginfo('url').'/wp-content/themes/rancakmall/icon/logo_bni_below_slide.png' ;?>" class="img-responsive img-banner-below">
                  </a>
               </div>
-              <div class="col-sm-3 col-xs-12 banner nopadding-left ">
+              <div class="col-sm-3 col-xs-12 banner nopadding-left side-menus-right">
                 <a href="<?php echo get_theme_mod('banner_slider_sidebar_link')?get_theme_mod('banner_slider_sidebar_link'):'http://bni.co.id/id-id/' ;?>" target="_blank">
                   <img src="<?php echo get_theme_mod('banner_slider_sidebar')?get_theme_mod('banner_slider_sidebar'):get_bloginfo('url').'/wp-content/themes/rancakmall/icon/logo_bni_side.png' ;?>" class="img-responsive-sec">
                  

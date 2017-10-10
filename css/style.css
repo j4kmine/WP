@@ -22,7 +22,7 @@
         font-weight: bold;
     }
     .informasi-payment{
-        background-color: #3c763d;
+        background-color:#391011;
         border: 1px solid rgba(0,0,0,0);
         border-radius: 4px;
         clear: both;
@@ -42,7 +42,15 @@
     color: #13a22d;
     font-size: 15px;
 }
-
+span.star {
+    color: red;
+    margin-right: 3px;
+    margin-left: 5p;
+}
+.wpcf7-radio span.wpcf7-list-item {
+    display: block;
+        margin-left: 0px;
+}
 .informasi_item.informasi_bank .value_info {
    
     color: #13a22d;
@@ -750,13 +758,13 @@ h2.about-post-title {
     font-size: 23px;
 }
 .sitemap-page h2.blog-post-title {
-    background: #b0d2b0;
+    background: #391011;
     padding: 20px;
     color: #fff;
 }
 .sitemap-page .blog-post {
     padding: 30px 20px;
-    background: #D9E9FF;
+    background: #fff;
     border-radius: 10px;
     margin-top: 10px;
 }
@@ -773,7 +781,16 @@ h2.about-post-title {
 span.feedback {
     font-size: 11px;
 }
-
+.woocommerce-info{
+  border-top-color: #391011;
+}
+.woocommerce-info a , .woocommerce-info::before{
+  color: #391011;
+}
+.woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit:disabled[disabled], .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button:disabled[disabled], .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled]{
+  opacity: 1;
+  color: #fff;
+}
 input#reg_billing_phone,input#reg_billing_first_name,input#reg_billing_last_name,input#username,input#password,input#reg_email,input#reg_password,.woocommerce-shipping-fields__field-wrapper input, .woocommerce-shipping-fields__field-wrapper textarea, .woocommerce-shipping-fields__field-wrapper select {
     padding: 10px 14px;
     padding-top: 10px;
