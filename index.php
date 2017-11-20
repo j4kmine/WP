@@ -185,7 +185,7 @@
                        <div class="col-md-3">
                         <?php $post_thumbnail_id = get_post_thumbnail_id( $post->ID ); ?>
                         <?php $full_size_image   = wp_get_attachment_image_src( $post_thumbnail_id ,'single-post-thumbnail'); ?>
-                        <a href="<?php echo $post->guid;?>">
+                        <a href="<?php echo get_site_url();?>/product/<?php echo $loop->post->post_name;?>">
                            <?php if(isset($full_size_image[0]) && count($full_size_image[0])>0){ ?>
                                   <img src="<?php echo $full_size_image[0];?>" class="img-responsive">
                           <?php }else{ ?>
@@ -193,7 +193,7 @@
                           <?php } ?>
                         </a>
                         <div class="price-slides">Rp.&nbsp;<?php echo number_format($product->get_price(),2,',','.');?></div>
-                        <div class="name-slides"> <a href="<?php echo $post->guid;?>"><?php echo $loop->post->post_title;?></a></div>
+                        <div class="name-slides"> <a href="<?php echo get_site_url();?>/product/<?php echo $loop->post->post_name;?>"><?php echo $loop->post->post_title;?></a></div>
                         <div class="summary-slides"><?php echo substr($loop->post->post_excerpt,0,35);?> </div>
                        
                         <span class="compare"><?php echo do_shortcode('[yith_compare_button]'); ;?></span>&nbsp;|&nbsp;<span class="wishlist"><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]');  ?></span>
