@@ -32,6 +32,7 @@
         }
          ul#top-menu li a{
             color: #fff;
+            font-size: 11px;
             text-transform: capitalize;
          }
          div#wpadminbar {
@@ -94,6 +95,12 @@
               </li>
                <li>
                 <a href="#order">Cek Pemesanan</a>
+              </li>
+               <li>
+                <a href="#rek">Mengubah Deskripsi Dan Nomor Rekening Bank</a>
+              </li>
+              <li>
+                <a href="#voucher">Membuat Voucher Diskon</a>
               </li>
             </ul>
         </div>
@@ -355,7 +362,28 @@
                  <h4>Cek Pemesanan</h4>
                  <p>Untuk mengecek pesanan,klik WooCommerce ,pilih Orders </p>
                 <img src="<?php echo get_template_directory_uri();?>/doc/chekorder.png" class="img-responsive">
-            </div>          
+            </div>  
+            <div id ="rek">
+                <h4>Mengubah Deskripsi Dan Nomor Rekening Bank</h4>
+                <p>Untuk mengubah Deskripsi Dan Nomor Rekening Bank di halaman checkout klik Woocommerces > Setting</p>
+                <img src="<?php echo get_template_directory_uri();?>/doc/transfer_menu.png" class="img-responsive">
+                <p>Klik tab Checkout , pilih rekening bank </p>
+                <img src="<?php echo get_template_directory_uri();?>/doc/transfer_form.png" class="img-responsive">
+                <p>Dan simpan perubahan dengan klik Save Changes</p>
+                <img src="<?php echo get_template_directory_uri();?>/doc/save_transfer.png" class="img-responsive">
+          </div>  
+           <div id ="voucher">
+                <h4>Membuat Voucher Diskonk</h4>
+                <p>Untuk Membuat Voucher Diskon klik Woocommerces > Coupons</p>
+                <img src="<?php echo get_template_directory_uri();?>/doc/coupon_menu.png" class="img-responsive">
+                
+                <img src="<?php echo get_template_directory_uri();?>/doc/coupon_form.png" class="img-responsive">
+                <img src="<?php echo get_template_directory_uri();?>/doc/coupon_form1.png" class="img-responsive">
+                <img src="<?php echo get_template_directory_uri();?>/doc/coupon_form2.png" class="img-responsive">
+                <img src="<?php echo get_template_directory_uri();?>/doc/coupon_form3.png" class="img-responsive">
+                <p>Dan simpan perubahan dengan klik Save </p>
+                <img src="<?php echo get_template_directory_uri();?>/doc/save_coupon.png" class="img-responsive">
+          </div> 
         </div>
   </div>
   </div>
