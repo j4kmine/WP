@@ -2,11 +2,35 @@
     <div class="main-content">
       <div class="container">
           <div class="row">
-            <div class="col-sm-3 nopadding-left nopadding-right hidden-xs">
-              <ul class="list-inline cat-first">
-                <li class="list-inline-item"><i class="fa fa-bars icon-bars" aria-hidden="true"></i>&nbsp;&nbsp;<span class="cat-prod">kategori</span></li>                
+            <div class="col-sm-3 nopadding-left nopadding-right hidden-xs dropdown">
+              <ul class="list-inline cat-first ">
+                <li class="list-inline-item dropbtn"><i class="fa fa-bars icon-bars" aria-hidden="true"></i>&nbsp;&nbsp;<span class="cat-prod">kategori</span></li>                
+                
                 <i class="fa fa-caret-up up_me" aria-hidden="true"></i>
               </ul>
+              <?php  $product_categories = get_terms( 'product_cat', $args );?>
+                 <?php if(isset($product_categories) && count($product_categories)>0){ ?>
+                    <ul class="menu_product hidden-xs dropdown-content">
+                      <?php foreach ($product_categories as $obj) { ?>  
+                        <?php
+                           $thumbnail_id = get_woocommerce_term_meta( $obj->term_id, 'thumbnail_id', true ); 
+                           $image = wp_get_attachment_url( $thumbnail_id ); 
+                        ?>
+                        
+                          <a href="<?php echo get_site_url().'/?product_cat='.$obj->slug;?>">
+                            <span class="product_icon">
+                                <?php if(isset($image) && $image != ''){ ?>
+                                    <img src="<?php echo $image;?>">
+                                <?php } ?>
+                             </span> 
+                             <?php echo isset($obj->name)?$obj->name:'';?>
+                           </a>
+                         
+                      
+                      <?php } ?>
+                    </ul>
+                <?php } ?>
+              
             </div>
             <div class="col-sm-9 nopadding-left hidden-xs">
                <ul class="list-inline menu-first ">
@@ -29,37 +53,14 @@
           
           <div class="headline_product">
              <div class="row">
-              <div class="col-sm-3 side-menus">
-                <?php  $product_categories = get_terms( 'product_cat', $args );?>
-                 <?php if(isset($product_categories) && count($product_categories)>0){ ?>
-                    <ul class="menu_product hidden-xs">
-                      <?php foreach ($product_categories as $obj) { ?>  
-                        <?php
-                           $thumbnail_id = get_woocommerce_term_meta( $obj->term_id, 'thumbnail_id', true ); 
-                           $image = wp_get_attachment_url( $thumbnail_id ); 
-                        ?>
-                        <li> 
-                          <a href="<?php echo get_site_url().'/?product_cat='.$obj->slug;?>">
-                            <span class="product_icon">
-                                <?php if(isset($image) && $image != ''){ ?>
-                                    <img src="<?php echo $image;?>">
-                                <?php } ?>
-                             </span> 
-                             <?php echo isset($obj->name)?$obj->name:'';?>
-                           </a>
-                         </li>
-                      
-                      <?php } ?>
-                    </ul>
-                <?php } ?>
-              </div>
-              <div class="col-sm-6 col-xs-12 nopadding-left slides">
-                    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:810px;overflow:hidden;visibility:hidden;">
+              
+              <div class="col-sm-9 col-xs-12 nopadding-left slides">
+                    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:-5px;width:980px;height:810px;overflow:hidden;visibility:hidden;">
                         <!-- Loading Screen -->
-                        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:-5px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
                             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="<?php echo get_template_directory_uri();?>/img/spin.svg" />
                         </div>
-                        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:810px;overflow:hidden;">
+                        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:-5px;width:980px;height:810px;overflow:hidden;">
                             <?php 
                                   $temp = $wp_query;
                                   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -97,21 +98,21 @@
                             <a data-u="any" href="https://www.jssor.com" style="display:none">bootstrap slider</a>
                         </div>
                         <!-- Thumbnail Navigator -->
-                        <div u="thumbnavigator" style="position:absolute;bottom:80px;left:0px;width:980px;height:191px;color:#FFF;overflow:hidden;cursor:default;background-color:rgba(0,0,0,.5);">
+                        <div u="thumbnavigator" style="position:absolute;bottom:80px;left:-5px;width:980px;height:191px;color:#FFF;overflow:hidden;cursor:default;background-color:rgba(0,0,0,.5);">
                             <div u="slides">
-                                <div u="prototype" style="position:absolute;top:0;left:0;width:980px;height:191px;">
-                                    <div u="thumbnailtemplate" style=" padding-left:100px;position:absolute;top:30px;left:0;width:100%;height:100%;font-family:verdana;font-weight:normal;line-height:50px;font-size:46px;padding-left:10px;box-sizing:border-box;"></div>
+                                <div u="prototype" style="position:absolute;top:0;left:-5;width:980px;height:191px;">
+                                    <div u="thumbnailtemplate" style=" padding-left:100px;position:absolute;top:30px;left:-5;width:100%;height:100%;font-family:verdana;font-weight:normal;line-height:50px;font-size:46px;padding-left:10px;box-sizing:border-box;"></div>
                                 </div>
                             </div>
                         </div>
                         <!-- Arrow Navigator -->
                         <div data-u="arrowleft" class="jssora061" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
-                            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:-5;width:100%;height:100%;">
                                 <path class="a" d="M11949,1919L5964.9,7771.7c-127.9,125.5-127.9,329.1,0,454.9L11949,14079"></path>
                             </svg>
                         </div>
                         <div data-u="arrowright" class="jssora061" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
-                            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:-5;width:100%;height:100%;">
                                 <path class="a" d="M5869,1919l5984.1,5852.7c127.9,125.5,127.9,329.1,0,454.9L5869,14079"></path>
                             </svg>
                         </div>

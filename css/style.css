@@ -182,7 +182,7 @@ span.star {
       text-decoration: none;
      }
     .img-banner-below{
-      max-width: 580px;
+      
       height: auto !important;
     }
     span.product_icon{
@@ -439,8 +439,10 @@ span.compare a, span.wishlist a {
   .main-content {
       padding-top: 49px;
   }
-  .col-sm-3.col-xs-12.banner.nopadding-left {
-      padding-left: 15px;
+  .col-sm-12.col-xs-12.blog-main{
+    padding-left: 0px;
+    margin-left: -4px;
+    padding-top: 10px;
   }
   .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
       border-color: #822f29;
@@ -851,6 +853,51 @@ input#reg_billing_phone,input#reg_billing_first_name,input#reg_billing_last_name
   left: 72px;
  
 }*/
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    
+    width: 100%;
+    
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left: -5px;
+    
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 19px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: #fff;
+    opacity: 0.7;
+    filter: alpha(opacity=50);
+    
+
+}
+
+.dropdown-content a:hover , .dropdown-content a:hover span{
+  background: #391011;
+  color: #fff;
+  opacity: 4.5;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
 .headline_product,.blog-main {
     margin-top: -15px;
 }
@@ -861,7 +908,7 @@ input#reg_billing_phone,input#reg_billing_first_name,input#reg_billing_last_name
   position: relative;
 }
 i.fa.fa-caret-up.up_me{
-  font-size: 38px;
+  font-size: 0px;
   position: absolute;
   bottom: -13px;
   left:16px;
@@ -946,6 +993,10 @@ span.sum {
   .page_guide img{
     width: 100%;
     height: auto;
+  }
+  .col-sm-12.col-xs-12.blog-main{
+    margin-left: 0px;
+    padding-left: 15px;
   }
    img.img-responsive.logo-store {
       width: 100px;

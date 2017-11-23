@@ -38,7 +38,7 @@
 
             /*#region responsive code begin*/
 
-            var MAX_WIDTH = 580;
+            var MAX_WIDTH = 900;
 
             function ScaleSlider() {
                 var containerElement = jssor_1_slider.$Elmt.parentNode;
@@ -228,12 +228,37 @@
           <div class="menu_general hidden-xs">
               <div class="container">
                 <div class="row">
-                  <div class="col-sm-3 nopadding-left nopadding-right hidden-xs">
-                    <ul class="list-inline cat-first">
-                      <li class="list-inline-item"><i class="fa fa-bars icon-bars bars_top" aria-hidden="true"></i>&nbsp;&nbsp;<span class="cat-prod">kategori</span></li>                
-                      <i class="fa fa-caret-up up_you" aria-hidden="true"></i>
+                   <div class="col-sm-3 nopadding-left nopadding-right hidden-xs dropdown">
+              <ul class="list-inline cat-first ">
+                <li class="list-inline-item dropbtn"><i class="fa fa-bars icon-bars" aria-hidden="true"></i>&nbsp;&nbsp;<span class="cat-prod">kategori</span></li>                
+                
+                <i class="fa fa-caret-up up_me" aria-hidden="true"></i>
+              </ul>
+              <?php  $product_categories = get_terms( 'product_cat', $args );?>
+                 <?php if(isset($product_categories) && count($product_categories)>0){ ?>
+                    <ul class="menu_product hidden-xs dropdown-content">
+                      <?php foreach ($product_categories as $obj) { ?>  
+                        <?php
+                           $thumbnail_id = get_woocommerce_term_meta( $obj->term_id, 'thumbnail_id', true ); 
+                           $image = wp_get_attachment_url( $thumbnail_id ); 
+                        ?>
+                        
+                          <a href="<?php echo get_site_url().'/?product_cat='.$obj->slug;?>">
+                            <span class="product_icon">
+                                <?php if(isset($image) && $image != ''){ ?>
+                                    <img src="<?php echo $image;?>">
+                                <?php } ?>
+                             </span> 
+                             <?php echo isset($obj->name)?$obj->name:'';?>
+                           </a>
+                         
+                      
+                      <?php } ?>
                     </ul>
-                  </div>
+                <?php } ?>
+              
+            </div>
+
                   <div class="col-sm-9 nopadding-left hidden-xs">
                      <ul class="list-inline menu-first ">
                         <li class="list-inline-item"><a href="<?php echo get_site_url();?>">home</a></li> 
